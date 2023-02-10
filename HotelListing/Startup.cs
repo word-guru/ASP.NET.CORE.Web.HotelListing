@@ -28,6 +28,15 @@ namespace HotelListing
         {
 
             services.AddControllers();
+
+            //доступ разпешен всем(добавленно в качестве примера)
+            services.AddCors(o =>
+            {
+                o.AddPolicy("AllowAll", builder =>
+                                                builder.AllowAnyOrigin()
+                                                .AllowAnyMethod()
+                                                .AllowAnyHeader());
+            });
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "HotelListing", Version = "v1" });
@@ -41,10 +50,12 @@ namespace HotelListing
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "HotelListing v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Hotel Listing v1"));
             }
 
             app.UseHttpsRedirection();
+
+            app.UseCors("AllowAll");
 
             app.UseRouting();
 
