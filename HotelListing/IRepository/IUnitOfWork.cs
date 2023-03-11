@@ -1,6 +1,14 @@
-﻿namespace HotelListing.IRepository
+﻿using HotelListing.Data.Models;
+using System;
+using System.Threading.Tasks;
+
+namespace HotelListing.IRepository
 {
-    public interface IUnitOfWork
+    public interface IUnitOfWork : IDisposable
     {
+        IGenericRepository<Country> Countries { get; }
+        IGenericRepository<Hotel> Hotels { get; }
+
+        Task Save();
     }
 }
