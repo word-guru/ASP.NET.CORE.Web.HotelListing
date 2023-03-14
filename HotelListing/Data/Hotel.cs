@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace HotelListing.Data.Models
+namespace HotelListing.Data
 {
     public class Hotel
     {

@@ -1,5 +1,5 @@
-﻿using HotelListing.Data.DBContext;
-using HotelListing.Data.Models;
+﻿using HotelListing.Data;
+using HotelListing.Data.DBContext;
 using HotelListing.IRepository;
 using System;
 using System.Threading.Tasks;

@@ -1,5 +1,4 @@
-﻿using HotelListing.Data.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace HotelListing.Data.DBContext
 {

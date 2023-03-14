@@ -1,4 +1,4 @@
-﻿using HotelListing.Data.Models;
+﻿using HotelListing.Data;
 using System;
 using System.Threading.Tasks;
 
