@@ -2,6 +2,7 @@ using HotelListing.Configurations;
 using HotelListing.Data.DBContext;
 using HotelListing.IRepository;
 using HotelListing.Repository;
+using HotelListing.Service;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -35,6 +36,9 @@ namespace HotelListing
             {
                 option.UseSqlServer(Configuration.GetConnectionString("ConnectionDb"));
             });
+
+            services.AddAuthentication();
+            services.ConfigureIdentity();
 
             //доступ разпешен всем(добавленно в качестве примера)
             services.AddCors(o =>
